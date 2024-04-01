@@ -2,6 +2,7 @@
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
 import '../styles.css'
+import { DeleteCategory } from "./DeleteCategory";
 
 export const GifGrind = ({ category,onDeleteCategory }) => {
 
@@ -11,7 +12,7 @@ export const GifGrind = ({ category,onDeleteCategory }) => {
 
     return (
         <>
-            <h3>{category} <button className="DeleteCategoryButton" onClick={()=>{onDeleteCategory(category)}}>x</button></h3>
+            <h3>{category} <DeleteCategory onDeleteCategory={onDeleteCategory}category={category}/></h3>
             {
                 isLoading ? <h2>cargando...</h2> : null
             }

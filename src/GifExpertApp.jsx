@@ -5,12 +5,24 @@ import { GifGrind } from './components/GifGrid'
 
 export const GifExpertApp = () => {
     const apiKey = "mxeBz9msSQCg7tQfbcwmfwPOp1gyj9Ic"
-    const [categories, setCategories] = useState(['Dragon Ball', 'Naruto', 'One Punch Man', 'The Rock']);
+    const [categories, setCategories] = useState(['Dragon Ball']);
 
 
     const onAddCategory = (categoriaNueva) => {
         if (categories.includes(categoriaNueva)) return;
         setCategories([categoriaNueva, ...categories])
+    }
+    const onDeleteCategory = (categoriaAeliminar)=>{
+        const deletecategory = (categories)=>{
+            const newCategories = []
+            for(let categorie of categories){
+                if(categorie != categoriaAeliminar){
+                    newCategories.push(categorie)
+                }
+            }
+            return newCategories
+        }
+        setCategories((categories)=>deletecategory(categories))
     }
 
     return (
@@ -23,7 +35,7 @@ export const GifExpertApp = () => {
 
             <ol>
                 {categories.map((category) => (
-                    <GifGrind category={category} key={category} />
+                    <GifGrind category={category} key={category} onDeleteCategory={onDeleteCategory}/>
                 ))}
             </ol>
             {/*Gif Item */}

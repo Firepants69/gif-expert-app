@@ -1,18 +1,17 @@
 
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
+import '../styles.css'
 
-export const GifGrind = ({ category }) => {
+export const GifGrind = ({ category,onDeleteCategory }) => {
 
-    const { images, isLoading } = useFetchGifs(category)
+    const { images,setImages, isLoading } = useFetchGifs(category)
 
     console.log(images, isLoading)
 
     return (
         <>
-            <h3>
-                {category}
-            </h3>
+            <h3>{category} <button className="DeleteCategoryButton" onClick={()=>{onDeleteCategory(category)}}>x</button></h3>
             {
                 isLoading ? <h2>cargando...</h2> : null
             }
@@ -20,7 +19,10 @@ export const GifGrind = ({ category }) => {
                 {images.map((image) => (
                     <GifItem
                         key={image.id}
-                        {...image}
+                        title ={image.title}
+                        url={image.url}
+                        id={image.id}
+                        setImages = {setImages}
                     ></GifItem>
                 ))}
             </div>

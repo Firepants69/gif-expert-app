@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export const AddCategory = ({ onNewCategory }) => {
 
-    const [inputValue, setInputValue] = useState('Padre Ball');
+    const [inputValue, setInputValue] = useState('');
 
 
     const onInputValue = ({ target }) => {

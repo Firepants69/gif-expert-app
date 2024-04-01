@@ -24,6 +24,8 @@ export const GifGrind = ({ category,onDeleteCategory }) => {
                         url={image.url}
                         id={image.id}
                         setImages = {setImages}
+                        onDeleteCategory={onDeleteCategory}
+                        category={category}
                     ></GifItem>
                 ))}
             </div>

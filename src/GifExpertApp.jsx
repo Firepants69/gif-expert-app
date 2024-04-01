@@ -5,7 +5,7 @@ import { GifGrind } from './components/GifGrid'
 
 export const GifExpertApp = () => {
     const apiKey = "mxeBz9msSQCg7tQfbcwmfwPOp1gyj9Ic"
-    const [categories, setCategories] = useState(['kimetsu no yaiba','Dragon Ball','One Punch Man']);
+    const [categories, setCategories] = useState(['Mob Psycho 100','kimetsu no yaiba','Dragon Ball','One Punch Man']);
 
 
     const onAddCategory = (categoriaNueva) => {
@@ -20,6 +20,7 @@ export const GifExpertApp = () => {
                     newCategories.push(categorie)
                 }
             }
+            
             return newCategories
         }
         setCategories((categories)=>deletecategory(categories))

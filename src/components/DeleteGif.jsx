@@ -1,7 +1,7 @@
 import { useState } from "react";
 import '../styles.css'
 
-export const DeleteGif = ({id,setImages})=>{
+export const DeleteGif = ({id,setImages,onDeleteCategory,category})=>{
     
     const newImages = (images)=>{
         let newImagesArray = []
@@ -9,6 +9,9 @@ export const DeleteGif = ({id,setImages})=>{
                 if(image.id != id){
                     newImagesArray.push(image)
                 }
+            }
+            if(newImagesArray.length ===0){
+                onDeleteCategory(category)
             }
             return newImagesArray
     }

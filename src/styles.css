@@ -18,6 +18,12 @@ input {
     width: 100%;
 }
 
+h1{
+    color: purple;
+    font-size: 50px;
+    text-shadow: rgb(0,0,0,50%) 1px 0 4px;
+}
+
 h2 {
     font-size: 1.5rem;
 }
@@ -93,3 +99,30 @@ h3 {
 .DeleteCategoryButton:hover{
     opacity: 50%;
 }
+
+.limit-count{
+    color:purple;
+    font-weight: bold;
+ 
+}
+
+.submit-button-category{
+    color: white;
+    background-color: purple;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    width: 120px;
+    transition: opacity 0.15s;
+}
+
+.submit-button-category:hover{
+    opacity: 75%;
+}
+
+.range-limit{
+    background-color: purple;
+    color: purple;
+   
+}
+

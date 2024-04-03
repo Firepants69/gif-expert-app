@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../styles.css'
+
 
 export const DeleteGif = ({id,setImages,onDeleteCategory,category})=>{
     

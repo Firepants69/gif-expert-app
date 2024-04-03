@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { getGifs } from "../helpers/getGifs"
 
-export const useFetchGifs = (category) => {
+export const useFetchGifs = (category,Initiallimit) => {
+    const [limit,setLimit] = useState(Initiallimit)
 
     const [images, setImages] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-
     const getImages = async () => {
-        const newImages = await getGifs(category);
+        const newImages = await getGifs(category,limit);
         setImages(newImages)
         setIsLoading(false)
     }
@@ -19,7 +19,7 @@ export const useFetchGifs = (category) => {
     return {
         images,
         setImages,
-        isLoading
+        isLoading,
     }
 
 }

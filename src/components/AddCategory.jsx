@@ -1,33 +1,33 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export const AddCategory = ({ onNewCategory }) => {
+  
+  const [inputValue, setInputValue] = useState("");
 
-    const [inputValue, setInputValue] = useState('');
+  const onInputValue = ({ target }) => {
+    setInputValue(target.value);
+  };
 
 
-    const onInputValue = ({ target }) => {
-        console.log(target.value);
-        setInputValue(target.value);
-    }
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const newInputValue = inputValue.trim();
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        const newInputValue = inputValue.trim();
+    if (newInputValue.length < 1) return;
 
-        if (newInputValue.length < 1) return
+    onNewCategory(newInputValue); 
+    setInputValue("");
+  };
 
-        onNewCategory(newInputValue)
-        setInputValue("")
-    }
-
-    return (
-        <form onSubmit={(event) => onSubmit(event)}>
-            <input
-                type="text"
-                placeholder="BuscarGif"
-                value={inputValue}
-                onChange={onInputValue}
-            />
-        </form>
-    )
-}
+  return (
+    <form onSubmit={onSubmit} aria-label="form">
+      <input
+        type="text"
+        placeholder="BuscarGif"
+        value={inputValue}
+        onChange={onInputValue}
+      />
+    <button className="submit-button-category" type="submit">aceptar</button>
+    </form>
+  );
+};

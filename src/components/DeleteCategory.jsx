@@ -1,4 +1,3 @@
-import '../styles.css'
 
 export const DeleteCategory = ({onDeleteCategory,category})=>{
     return(

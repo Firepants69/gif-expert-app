@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { DeleteGif } from "./DeleteGif";
+import PropTypes from 'prop-types'
 
 export const GifItem = ({ title, url,id,setImages,onDeleteCategory,category}) => {
     return (
@@ -9,4 +10,9 @@ export const GifItem = ({ title, url,id,setImages,onDeleteCategory,category}) =>
             <p>{title}</p>
         </div>
     )
+}
+
+GifItem.PropTypes = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
 }

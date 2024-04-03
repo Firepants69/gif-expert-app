@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { AddCategory } from './components/AddCategory'
 import { GifGrind } from './components/GifGrid'
+import { SelectQuantity } from './components/SelectQuantity'
 
 export const GifExpertApp = () => {
     const apiKey = "mxeBz9msSQCg7tQfbcwmfwPOp1gyj9Ic"
     const [categories, setCategories] = useState(['Mob Psycho 100','kimetsu no yaiba','Dragon Ball','One Punch Man']);
     const [limit,setLimit] = useState(10);
-
     const OnLimitChange =(event)=>{
-        setLimit(event.target.value)
+      setLimit(event.target.value)
     }
+
+  
 
 
     const onAddCategory = (categoriaNueva) => {
@@ -36,8 +38,8 @@ export const GifExpertApp = () => {
             <h1>GifExpertApp</h1>
             {/*input */}
             <div className='control-input'>
-            <input type="range" className='range-limit' max={50} min={1} onChange={OnLimitChange}/>
-            <p>cantidad de gifs: <span className='limit-count'>{limit}</span></p>
+            <SelectQuantity limit={limit} OnLimitChange={OnLimitChange}/>
+
             <AddCategory onNewCategory={onAddCategory}></AddCategory>
             </div>
             {/*listado de Gif */}

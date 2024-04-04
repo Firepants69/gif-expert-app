@@ -7,18 +7,9 @@ body {
     padding: 60px;
 }
 
-input {
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid rgb(97, 32, 158);
-    color: black;
-    font-size: 1.2rem;
-    outline: none;
-    padding: 10px 15px;
-    width: 100%;
-}
 
 h1{
+    margin-bottom: 0;
     color: purple;
     font-size: 50px;
     text-shadow: rgb(0,0,0,50%) 1px 0 4px;
@@ -103,26 +94,54 @@ h3 {
 .limit-count{
     color:purple;
     font-weight: bold;
- 
+    
 }
 
-.submit-button-category{
-    color: white;
-    background-color: purple;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 20px;
-    width: 120px;
-    transition: opacity 0.15s;
-}
-
-.submit-button-category:hover{
-    opacity: 75%;
-}
 
 .range-limit{
     background-color: purple;
     color: purple;
-   
+    width: 100%;
 }
 
+.count-gif{
+    margin-top: 0;
+    font-size: 20px;
+}
+
+
+.container-submit-input{
+    width: 76%;
+    max-width: 100%;
+    position: relative;
+}
+
+.input-gif{
+    background-color: rgba(255,255,255,0.3);
+    border: 2px solid ;
+    border-color:black;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    width: 126%;  
+}
+
+
+
+
+
+.submit-button-category{
+    border: solid;
+    border-radius: 50%;
+    height: 101%;
+    aspect-ratio: 1;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    left: 128%;
+    border-color:black;
+}
+.submit-button-category:hover{
+    background-color: black;
+    border-color: white;
+    color: white;
+}

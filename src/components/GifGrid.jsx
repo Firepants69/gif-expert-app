@@ -2,6 +2,8 @@
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
 import { DeleteCategory } from "./DeleteCategory";
+import PropTypes from 'prop-types'; 
+
 
 export const GifGrind = ({ category,onDeleteCategory,Initiallimit }) => {
     
@@ -13,7 +15,7 @@ export const GifGrind = ({ category,onDeleteCategory,Initiallimit }) => {
         <>
             <h3>{category} <DeleteCategory onDeleteCategory={onDeleteCategory}category={category}/></h3>
             {
-                isLoading ? <h2>cargando...</h2> : null
+                isLoading ? <h2>Cargando...</h2> : null
             }
          
             <div className="card-grid">
@@ -32,4 +34,8 @@ export const GifGrind = ({ category,onDeleteCategory,Initiallimit }) => {
             </div>
         </>
     )
+}
+
+GifGrind.PropTypes = {
+    category: PropTypes.string.isRequired,
 }

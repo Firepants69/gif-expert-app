@@ -40,7 +40,7 @@ export const GifExpertApp = () => {
             <div className='control-input'>
             <SelectQuantity limit={limit} OnLimitChange={OnLimitChange}/>
 
-            <AddCategory onNewCategory={onAddCategory}></AddCategory>
+            <AddCategory  onNewCategory={onAddCategory}></AddCategory>
             </div>
             {/*listado de Gif */}
             <ol>
